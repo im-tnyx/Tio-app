@@ -67,10 +67,10 @@ Important: `profile`, `settings`, और `progress` अभी skeleton boundarie
 
 - [x] Auth module exists.
 - [x] Auth graph exists.
-- [ ] Login destination has real UI.
-- [ ] Signup destination has real UI.
-- [ ] OTP destination has real UI.
-- [ ] Auth success flow is fully reachable from UI.
+- [x] Login destination has minimum real UI.
+- [x] Signup destination has minimum real UI.
+- [x] OTP destination has minimum real UI.
+- [x] Auth success flow is reachable from Login demo/sign-in and OTP verify actions.
 - [ ] Supabase/Firebase auth source of truth is finalized.
 
 ### Onboarding
@@ -146,9 +146,9 @@ Recommended next order:
    - Add local/dev fake repository first if Supabase is not ready.
    - Then add Supabase tables/seed/RLS when implementation begins.
 
-3. **Auth minimum real UI**
-   - Replace empty TODO destinations with usable Login/Signup/OTP skeleton.
-   - Keep auth session source of truth clear.
+3. **Auth repository/session vertical slice**
+   - Replace temporary Auth success with repository-backed session handling.
+   - Finalize Supabase/Firebase source of truth before storing real user sessions.
 
 4. **Progress real screens**
    - Implement Journey screen first.
@@ -197,7 +197,7 @@ Rule: Future module folders should be created only when runtime code needs them.
 
 - [x] `./gradlew.bat :app:compileDebugKotlin`
 - [x] Result: BUILD SUCCESSFUL
-- [x] Scope: Profile, Settings, Progress skeleton modules compile with app.
+- [x] Scope: Auth minimum screens and AuthGraph wiring compile with app.
 
 Known warning:
 
@@ -205,5 +205,5 @@ Known warning:
 
 ---
 
-**Last Updated:** 2026-06-27  
-**Current Focus:** Wire `ProfileGraph` from avatar and `SettingsGraph` from gear icon, then start Nutrition repository vertical slice.
+**Last Updated:** 2026-06-29
+**Current Focus:** Replace temporary Auth success with real auth repository/session source, then wire `ProfileGraph` from avatar and `SettingsGraph` from gear icon.
