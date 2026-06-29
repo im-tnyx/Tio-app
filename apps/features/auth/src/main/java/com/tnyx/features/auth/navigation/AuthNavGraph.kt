@@ -4,6 +4,10 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import androidx.navigation.toRoute
+import com.tnyx.features.auth.presentation.login.LoginRoute
+import com.tnyx.features.auth.presentation.otp.OtpVerificationRoute
+import com.tnyx.features.auth.presentation.signup.SignupRoute
 import com.tnyx.routing.routes.AuthRoute
 import com.tnyx.routing.routes.RootRoute
 
@@ -19,15 +23,36 @@ fun NavGraphBuilder.authGraph(
         startDestination = AuthRoute.Login
     ) {
         composable<AuthRoute.Login> {
-            // TODO: LoginRoute(...)
+            LoginRoute(
+                onAuthSuccess = onAuthSuccess,
+                onNavigateToSignup = {
+                    navController.navigate(AuthRoute.Signup)
+                }
+            )
         }
-        
+
         composable<AuthRoute.Signup> {
-            // TODO: SignupRoute(...)
+            SignupRoute(
+                onNavigateToLogin = {
+                    if (!navController.popBackStack()) {
+                        navController.navigate(AuthRoute.Login)
+                    }
+                },
+                onNavigateToOtp = { email ->
+                    navController.navigate(AuthRoute.OtpVerification(email))
+                }
+            )
         }
-        
-        composable<AuthRoute.OtpVerification> {
-            // TODO: OtpRoute(...)
+
+        composable<AuthRoute.OtpVerification> { backStackEntry ->
+            val route = backStackEntry.toRoute<AuthRoute.OtpVerification>()
+            OtpVerificationRoute(
+                email = route.email,
+                onAuthSuccess = onAuthSuccess,
+                onNavigateBack = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }
