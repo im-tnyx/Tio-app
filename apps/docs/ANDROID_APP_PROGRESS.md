@@ -73,6 +73,7 @@ Important: `profile`, `settings`, और `progress` अभी skeleton boundarie
 - [x] Auth success flow is reachable from Login demo/sign-in and OTP verify actions.
 - [x] AuthRepository contract exists.
 - [x] FakeAuthRepository backs the minimum auth flow for app testing.
+- [x] Unit tests cover FakeAuthRepository and Auth ViewModels (Login, Signup, OTP).
 - [ ] Supabase/Firebase auth source of truth is finalized.
 
 ### Onboarding
