@@ -32,6 +32,7 @@ Tio-hub/
 |-- CODE_OF_CONDUCT.md
 |-- LICENSE
 |-- .env            # Environment configuration (not committed)
+|-- .ai/            # Short AI/contributor orientation layer
 `-- apps/
     |-- app/        # Android phone app entry point, routing glue, DI composition
     |-- core/       # Design system, TnyxTheme, reusable UI, app shell, global routes
@@ -224,7 +225,13 @@ For focused checks, prefer module-level commands:
 
 | Document | Purpose |
 |---|---|
+| [`.ai/README.md`](.ai/README.md) | Short AI/contributor orientation layer; canonical docs still live in `apps/docs/` |
+| [`apps/docs/ENGINEERING_GUIDELINES.md`](apps/docs/ENGINEERING_GUIDELINES.md) | Production engineering rules and review expectations |
+| [`apps/docs/DEFINITION_OF_DONE.md`](apps/docs/DEFINITION_OF_DONE.md) | Merge-readiness checklist for feature, UI, data, and docs work |
+| [`apps/docs/ARCHITECTURE_CHANGELOG.md`](apps/docs/ARCHITECTURE_CHANGELOG.md) | Durable architecture change log |
+| [`apps/docs/adr/README.md`](apps/docs/adr/README.md) | Architecture Decision Records index |
 | [`apps/README.md`](apps/README.md) | Android app-focused technical overview |
+| [`apps/docs/README.md`](apps/docs/README.md) | Canonical Android/Wear documentation map and reading paths |
 | [`apps/docs/ARCHITECTURE.md`](apps/docs/ARCHITECTURE.md) | Module ownership, design system, shell, feature patterns |
 | [`apps/docs/NAVIGATION_GUIDE.md`](apps/docs/NAVIGATION_GUIDE.md) | Type-safe navigation and graph policy |
 | [`apps/docs/PROFILE_SETTINGS_GUIDE.md`](apps/docs/PROFILE_SETTINGS_GUIDE.md) | Profile, Settings, Progress, ownership rules |

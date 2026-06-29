@@ -1,0 +1,17 @@
+# Repository owners have not been assigned yet.
+# Add GitHub users or teams before enabling required CODEOWNERS review.
+#
+# Suggested future ownership shape:
+#
+# *                             @im-tnyx/tnyx-maintainers
+# /apps/app/                    @im-tnyx/android
+# /apps/core/                   @im-tnyx/android-architecture
+# /apps/shared/                 @im-tnyx/shared-contracts
+# /apps/features/nutrition/     @im-tnyx/nutrition
+# /apps/features/workout/       @im-tnyx/workout
+# /apps/features/onboarding/    @im-tnyx/onboarding
+# /apps/features/profile/       @im-tnyx/profile-progress
+# /apps/features/settings/      @im-tnyx/settings
+# /apps/features/progress/      @im-tnyx/profile-progress
+# /apps/wear/                   @im-tnyx/wear
+# /apps/docs/                   @im-tnyx/architecture

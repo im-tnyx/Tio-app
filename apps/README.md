@@ -269,7 +269,12 @@ app/src/main/
 
 | File | Description |
 |---|---|
+| [docs/README.md](docs/README.md) | Canonical Android/Wear documentation map and reading paths |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Core theme system, component library, shell, feature folder patterns, ownership freeze summary |
+| [docs/ENGINEERING_GUIDELINES.md](docs/ENGINEERING_GUIDELINES.md) | Production engineering rules and review expectations |
+| [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md) | Merge-readiness checklist for feature, UI, data, and docs work |
+| [docs/ARCHITECTURE_CHANGELOG.md](docs/ARCHITECTURE_CHANGELOG.md) | Durable architecture change log |
+| [docs/adr/README.md](docs/adr/README.md) | Architecture Decision Records index |
 | [docs/NUTRITION.md](docs/NUTRITION.md) | Nutrition Meal Diary runtime, UI components, data boundary, and persistence roadmap |
 | [docs/NAVIGATION_GUIDE.md](docs/NAVIGATION_GUIDE.md) | 100+ screen type-safe navigation, nested graphs, route contracts, chrome policy |
 | [docs/PROFILE_SETTINGS_GUIDE.md](docs/PROFILE_SETTINGS_GUIDE.md) | Canonical Profile, Settings, Progress, Billing, Health, Recovery ownership reference |

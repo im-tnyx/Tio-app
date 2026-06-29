@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 rootProject.name = "Tnyx"
 include(":app")
 include(":wear")         // Wear OS Watch App
-include(":shared")       // Pure Kotlin — Phone App + Watch App दोनों use करते हैं
+include(":shared")       // Pure Kotlin contracts reused by phone and watch
 include(":core")         // Design System, UI Components & Shell
 include(":features:workout")
 include(":features:nutrition")
