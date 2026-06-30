@@ -25,19 +25,14 @@ class ShellViewModel @Inject constructor() : ViewModel() {
                 _uiState.update { it.copy(appBarOpacity = opacity) }
             }
             ShellAction.PremiumClicked -> {
-                // Navigate to premium screen
+                // Navigate to premium screen.
             }
             ShellAction.StreakClicked -> {
-                // Show streak details
+                // Show streak details.
             }
             ShellAction.ProfileClicked -> {
-                // Navigate to profile
-            }
-            is ShellAction.WorkoutSubTabSelected -> {
-                // Navigation handled by MainScreen via NavController.
-                // ShellUiState.selectedWorkoutTab is derived from nav back-stack in MainScreen.
+                // Navigate to profile.
             }
         }
     }
 }
-

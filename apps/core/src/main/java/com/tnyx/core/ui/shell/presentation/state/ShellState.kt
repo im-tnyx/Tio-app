@@ -3,7 +3,7 @@ package com.tnyx.core.ui.shell.presentation.state
 import androidx.compose.runtime.Immutable
 
 /**
- * Tabs available in the App Shell.
+ * Tabs available in the app shell.
  */
 enum class ShellTab {
     Home,
@@ -19,20 +19,10 @@ enum class ShellPlanTier {
     Premium
 }
 
-/**
- * Sub-tabs inside the Workout tab secondary bar.
- */
-enum class WorkoutSubTab {
-    History,
-    Explore,
-    Routines
-}
-
 @Immutable
 data class ShellUiState(
     val selectedTab: ShellTab = ShellTab.Home,
     val isBottomNavVisible: Boolean = true,
     val appBarOpacity: Float = 0f,
-    val planTier: ShellPlanTier = ShellPlanTier.Free,
-    val selectedWorkoutTab: WorkoutSubTab = WorkoutSubTab.History
+    val planTier: ShellPlanTier = ShellPlanTier.Free
 )

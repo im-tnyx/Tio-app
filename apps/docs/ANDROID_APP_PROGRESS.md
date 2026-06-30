@@ -20,7 +20,7 @@ Truth boundary:
 - [x] **Type-Safe Navigation Foundation:** `@Serializable` route contracts और Compose Navigation pattern use हो रहा है।
 - [x] **MVI Pattern:** Route → Screen → ViewModel → Contract pattern docs और Nutrition implementation में established है।
 - [x] **TnyxTheme:** Design tokens, semantic colors, typography, spacing, shapes, motion, और component tokens मौजूद हैं।
-- [x] **App Shell:** `TnyxShell`, `MainBottomNav`, `MainTopBar`, और `WorkoutSecondaryNav` foundation मौजूद है।
+- [x] **App Shell:** `TnyxShell`, `MainBottomNav`, aur `MainTopBar` foundation maujood hai.
 
 ---
 
@@ -98,9 +98,8 @@ Important: `profile`, `settings`, और `progress` अभी skeleton boundarie
 
 - [x] Workout module exists.
 - [x] Workout graph exists.
-- [x] Workout secondary nav foundation exists.
-- [x] Workout tab owns History / Explore / Routines destinations.
-- [ ] Workout History, Explore, and Routines are still placeholders.
+- [x] Workout tab is intentionally kept as a simple placeholder.
+- [ ] Workout redesign and real production screens are not implemented yet.
 - [ ] Workout repository-backed runtime is not implemented yet.
 
 ### Profile
@@ -187,7 +186,7 @@ Rule: Future module folders should be created only when runtime code needs them.
 - `apps/shared`: pure Kotlin shared domain contracts.
 - `apps/features/auth`: Auth graph skeleton.
 - `apps/features/onboarding`: Splash/welcome/onboarding foundation.
-- `apps/features/workout`: Workout graph and secondary nav destinations.
+- `apps/features/workout`: Simple Workout placeholder graph.
 - `apps/features/nutrition`: Nutrition diary/editor screens.
 - `apps/features/profile`: Profile launcher skeleton.
 - `apps/features/settings`: Settings config skeleton.

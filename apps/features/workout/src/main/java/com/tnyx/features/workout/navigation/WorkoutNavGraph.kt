@@ -10,52 +10,28 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.tnyx.routing.routes.MainRoute
+import kotlinx.serialization.Serializable
 
 /**
- * Workout feature NavGraph.
- * Owns the 3 secondary tab destinations: History, Explore, Routines.
- * Secondary nav bar (WorkoutSecondaryNav) navigates between these destinations.
+ * Workout feature graph.
+ *
+ * Workout is intentionally kept as a simple placeholder until the next product
+ * redesign defines the real screen structure.
  */
 fun NavGraphBuilder.workoutGraph(
+    @Suppress("UNUSED_PARAMETER")
     navController: NavHostController
 ) {
     navigation<MainRoute.WorkoutGraph>(
-        startDestination = WorkoutScreen.History
+        startDestination = WorkoutPlaceholder
     ) {
-        composable<WorkoutScreen.History> {
-            // TODO: Replace with real WorkoutHistoryRoute
+        composable<WorkoutPlaceholder> {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text("Workout History")
-            }
-        }
-
-        composable<WorkoutScreen.Explore> {
-            // TODO: Replace with real WorkoutExploreRoute
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text("Explore Workouts")
-            }
-        }
-
-        composable<WorkoutScreen.Routines> {
-            // TODO: Replace with real WorkoutRoutinesRoute
-            Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text("My Routines")
+                Text("Workout")
             }
         }
     }
 }
 
-/**
- * Type-safe route definitions for Workout sub-sections.
- */
-@kotlinx.serialization.Serializable
-sealed interface WorkoutScreen {
-    @kotlinx.serialization.Serializable
-    data object History : WorkoutScreen
-
-    @kotlinx.serialization.Serializable
-    data object Explore : WorkoutScreen
-
-    @kotlinx.serialization.Serializable
-    data object Routines : WorkoutScreen
-}
+@Serializable
+private data object WorkoutPlaceholder

@@ -1,4 +1,4 @@
-# TNYX Production-Grade Navigation Architecture Guide
+﻿# TNYX Production-Grade Navigation Architecture Guide
 
 **Last updated: 2026-06-27**
 
@@ -175,7 +175,6 @@ Allowed:
 - Shell-level spacing/insets.
 - Route-derived selected tab.
 - Chrome policy application.
-- Workout secondary nav visibility trigger.
 
 Not allowed:
 - Nutrition calculations.
@@ -187,12 +186,12 @@ Not allowed:
 
 ---
 
-## 5. UI Chrome Policy (TopBar & BottomNav & SecondaryNav)
+## 5. UI Chrome Policy (TopBar & BottomNav)
 
 - **BottomBar:** `TnyxShell` और `MainScreen.kt` में centralized रहेगा।
 - **Active State:** active tab `navController.currentBackStackEntry?.destination?.hierarchy` से derive होगा।
 - **TopBar:** screen-level needs के हिसाब से owning Route/Screen wire करेगा। Shell generic top bar दे सकता है, feature-specific action नहीं।
-- **WorkoutSecondaryNav:** केवल Workout tab पर visible होगा। इसका navigation `WorkoutNavGraph` में जाएगा। Screens को `NavController` नहीं मिलेगा।
+- **Workout:** abhi clean placeholder hai. Shell mein Workout-specific secondary nav, scroll hide/show, ya sub-tab state nahi hai.
 - **Profile Avatar:** `ProfileGraph` launch करेगा।
 - **Settings Gear:** `SettingsGraph` launch करेगा।
 
@@ -209,31 +208,17 @@ Not allowed:
 
 ---
 
-## 7. Workout Sub-Navigation Pattern
+## 7. Workout Placeholder Pattern
 
-Workout tab में secondary nav bar (`History | Explore | Routines`) एक अलग navigation layer provide करता है।
-
-```kotlin
-is ShellAction.WorkoutSubTabSelected -> {
-    val workoutRoute = when (action.tab) {
-        WorkoutSubTab.History  -> WorkoutRoute.History
-        WorkoutSubTab.Explore  -> WorkoutRoute.Explore
-        WorkoutSubTab.Routines -> WorkoutRoute.Routines
-    }
-    mainNavController.navigate(workoutRoute) {
-        popUpTo<MainRoute.WorkoutGraph> { saveState = true }
-        launchSingleTop = true
-        restoreState = true
-    }
-}
-```
+Workout tab currently has one simple placeholder destination inside `WorkoutNavGraph`.
 
 Rules:
 
-- `popUpTo<MainRoute.WorkoutGraph>` Workout graph root तक pop करता है।
-- `saveState = true` + `restoreState = true` tab switch पर scroll/state preserve करता है।
-- `launchSingleTop = true` duplicate destinations avoid करता है।
-- Shell को `NavController` नहीं देना; `MainScreen` action से navigation wire करेगा।
+- Shell only owns top-level tab selection and bottom navigation.
+- No Workout-specific secondary navigation lives in `TnyxShell`.
+- No `WorkoutSubTab` state/action is part of shell state.
+- No Workout cards, detail flow, or production redesign is introduced yet.
+- Future Workout screens should be added inside the Workout feature graph when the product direction is ready.
 
 ---
 

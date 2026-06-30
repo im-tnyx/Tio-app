@@ -56,7 +56,7 @@ Tnyx/
 │   │   └── tokens/                   # Foundation, Semantic, Component tokens
 │   ├── ui/                           # Reusable UI and App Shell
 │   │   ├── components/               # Buttons, Cards, Inputs, Sheets
-│   │   └── shell/                    # App Chrome (BottomNav, TopBar, SecondaryNav)
+│   │   └── shell/                    # App Chrome (BottomNav, TopBar)
 │   └── routing/routes/               # Global @Serializable route definitions
 │
 ├── shared/                           # Pure Kotlin domain contracts (Phone + Watch)
@@ -182,7 +182,6 @@ Ownership note:
 |---|---|---|
 | `MainTopBar` | MainChrome destinations where needed | Dynamic top bar with user/account entry points |
 | `MainBottomNav` | `MainChrome` destinations | 5-tab bottom navigation: Home, Workout, Nutrition, Coach, Progress |
-| `WorkoutSecondaryNav` | Workout tab only | Secondary sub-tab bar (History \| Explore \| Routines) |
 
 ### Chrome Policy
 
@@ -196,17 +195,11 @@ Every destination declares one chrome policy:
 | `BottomSheet` | Sheet-style transient destination |
 | `Dialog` | Confirmation, warning, legal, permission explanation |
 
-### Workout Secondary Nav — Scroll Behavior
+### Workout Placeholder State
 
-```text
-Workout tab press    → bar slides UP from bottom (enter, 400ms)
-Scroll UP > 200dp   → bar slides DOWN (hide, 320ms)
-Scroll stops 1.5s   → bar slides UP (auto-restore, 320ms)
-Scroll DOWN         → bar slides UP immediately
-Tab switch (exit)   → bar slides DOWN (exit, 280ms)
-```
+Workout tab currently stays intentionally clean: one basic placeholder destination inside `WorkoutNavGraph`.
 
-**Architecture Rule:** Shell सिर्फ chrome show/hide करता है। Workout sub-sections (History, Explore, Routines) `WorkoutNavGraph` own करता है। Selected sub-tab `NavBackStack` से derive होता है — कोई अलग source of truth नहीं।
+**Architecture Rule:** Shell sirf app chrome show/hide karta hai. Workout-specific sub-tabs, scroll hide/show behavior, cards, detail flows, ya redesign abhi runtime mein nahi hain. Future Workout redesign apne feature graph mein aayega, shell state/action coupling mein nahi.
 
 ---
 
