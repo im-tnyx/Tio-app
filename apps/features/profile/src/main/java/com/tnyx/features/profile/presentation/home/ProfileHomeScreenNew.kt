@@ -163,7 +163,7 @@ private fun UserProfileCardNew(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = TnyxTheme.colors.surfaceContainer
+            containerColor = TnyxTheme.colors.surface
         )
     ) {
         Column(
@@ -404,7 +404,7 @@ private fun StatsCard(
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
-            containerColor = TnyxTheme.colors.surfaceContainer
+            containerColor = TnyxTheme.colors.surface
         )
     ) {
         Column(
@@ -465,7 +465,7 @@ private fun CurrentJourneyCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = TnyxTheme.colors.surfaceContainer
+            containerColor = TnyxTheme.colors.surface
         )
     ) {
         Column(modifier = Modifier.padding(TnyxTheme.dimens.SpaceM)) {
@@ -532,7 +532,7 @@ private fun ProgressPhotosCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = TnyxTheme.colors.surfaceContainer
+            containerColor = TnyxTheme.colors.surface
         )
     ) {
         Column(
@@ -628,7 +628,7 @@ private fun QuickActionItem(
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
-            containerColor = TnyxTheme.colors.surfaceContainer
+            containerColor = TnyxTheme.colors.surface
         )
     ) {
         Row(
@@ -736,7 +736,7 @@ private fun HealthConnectionsSection(
                 .clickable(onClick = onClick),
             shape = RoundedCornerShape(16.dp),
             colors = CardDefaults.cardColors(
-                containerColor = TnyxTheme.colors.surfaceContainer
+                containerColor = TnyxTheme.colors.surface
             )
         ) {
             Row(
