@@ -312,6 +312,7 @@ App production-ready और feature-complete होने के बाद **KMP
 - Compose imports या annotations `:shared` में मत डालो
 - Hilt, Room, `Context`, `NavController`, resources, और platform UI APIs `:shared` से बाहर रखो
 - Domain models में direct time/system/platform calls मत करो; current time/date caller provide करे
+- `java.*` या `javax.*` imports से बचो (जैसे `java.time.*`, `javax.inject.*`) — KMP migration में expect/actual abstraction require होगा
 - Repository interfaces pure Kotlin रहें; implementations Android/Wear/future iOS platform layer में रहें
 
 ---

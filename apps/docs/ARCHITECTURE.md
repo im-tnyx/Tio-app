@@ -148,11 +148,12 @@ Do not create these folders just to satisfy a tree. Add them when the first real
 2. **Compose imports या annotations नहीं** — `@Immutable`, `@Stable`, Compose UI, Material, preview, icons, या resources `:shared` में नहीं आएंगे
 3. **Hilt, Room, Context, NavController नहीं** — DI annotations, database entities/DAOs, Android `Context`, navigation controller, resources, और platform UI APIs बाहर रहेंगे
 4. **Direct time/system/platform calls नहीं** — domain model `System.currentTimeMillis()`, locale/resource lookup, device APIs, या platform clock directly call नहीं करेगा
-5. **Repository interfaces pure Kotlin रहेंगी** — interface `:shared` में, implementation platform/data layer में रहेगी
-6. **Platform implementation outside `:shared`** — Android implementation `:app`/feature data layer में, Wear implementation `:wear` में, future iOS implementation `iosMain`/iOS app layer में होगी
-7. **UseCases constructor-injected pure Kotlin होंगे** — framework-specific service locator pattern domain/usecase में नहीं आएगा
-8. **Caller-provided inputs prefer करो** — timestamps, current date/time, locale, user/device state caller provide करेगा ताकि common code deterministic रहे
-9. **Phone + Watch + future iOS सोचकर design करो** — shared models simple, serializable, testable, और platform-neutral रहने चाहिए
+5. **`java.*` या `javax.*` imports नहीं (जब तक ADR-approved expect/actual न हो)** — `java.util.Date`, `java.time.*`, `javax.inject.*`, या JVM-specific stdlib imports से बचो; KMP migration में ये platform-specific abstractions require करेंगे
+6. **Repository interfaces pure Kotlin रहेंगी** — interface `:shared` में, implementation platform/data layer में रहेगी
+7. **Platform implementation outside `:shared`** — Android implementation `:app`/feature data layer में, Wear implementation `:wear` में, future iOS implementation `iosMain`/iOS app layer में होगी
+8. **UseCases constructor-injected pure Kotlin होंगे** — framework-specific service locator pattern domain/usecase में नहीं आएगा
+9. **Caller-provided inputs prefer करो** — timestamps, current date/time, locale, user/device state caller provide करेगा ताकि common code deterministic रहे
+10. **Phone + Watch + future iOS सोचकर design करो** — shared models simple, serializable, testable, और platform-neutral रहने चाहिए
 
 ### `:app` में इसे kaise use karen
 
